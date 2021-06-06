@@ -6,7 +6,8 @@ const ItemDetail = (match) => {
 
   return (
     <>
-      <h2>You are a successful developer</h2>
+      <h2>You are a successful developer </h2>
+      <p>The clicked ID is: "{match.match.params.id}"</p>
     </>
   );
 };
