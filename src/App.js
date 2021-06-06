@@ -2,6 +2,7 @@ import React from "react";
 import About from "./Components/About";
 import Shop from "./Components/Shop";
 import Home from "./Components/Home";
+import ItemDetail from "./Components/ItemDetail";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -24,15 +25,10 @@ function App() {
         </nav>
         <Switch>
           <main>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/about" exact>
-              <About />
-            </Route>
-            <Route path="/shop" exact>
-              <Shop />
-            </Route>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/shop" exact component={Shop} />
+            <Route path="/shop/:id" component={ItemDetail} />
           </main>
         </Switch>
       </div>

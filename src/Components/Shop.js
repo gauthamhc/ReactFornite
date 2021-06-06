@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [banners, setBanners] = useState([]);
+  const [saved, setSaved] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -25,9 +27,11 @@ const Shop = () => {
       <div className="banners">
         {banners.map((banner) => {
           return (
-            <div className="banner">
-              <p>{banner.devName}</p>
-              <img src={banner.images.smallIcon} alt="" />
+            <div className="banner" key={banner.id}>
+              <Link to={`/shop/${banner.id}`}>
+                <p>{banner.devName}</p>
+                <img src={banner.images.smallIcon} alt="Banner_Image" />
+              </Link>
             </div>
           );
         })}
